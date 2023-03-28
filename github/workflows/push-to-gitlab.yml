@@ -1,0 +1,32 @@
+# code pull from https://dev.to/brunorobert/github-and-gitlab-sync-44mn
+name: Push to git lab on every change
+
+on:
+  - push
+  - delete
+push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Push to GitLab
+        run: |
+          git remote add gitlab git@gitlab.com:leonwong24/Spring-petclinic.git
+          git push gitlab HEAD:main
+
+#jobs:
+  #sync:
+    #runs-on: ubuntu-latest
+    #name: Git Repo Sync
+    #steps:
+    #- uses: actions/checkout@v2
+      #with:
+        #fetch-depth: 0
+    #- uses: wangchucheng/git-repo-sync@v0.1.0
+      #with:
+        # Such as https://github.com/wangchucheng/git-repo-sync.git
+        #target-url: ${{ https://gitlab.com/leonwong24/Spring-petclinic.git }}
+        # Such as wangchucheng
+        #target-username: ${{ leonwong24 }}
+          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS\_TOKEN }}
+        #target-token: ${{ secrets.TARGET_TOKEN }}
