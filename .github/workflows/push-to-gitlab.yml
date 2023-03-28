@@ -1,10 +1,14 @@
 # code pull from https://dev.to/brunorobert/github-and-gitlab-sync-44mn
-name: Push to git lab on every change
+name: Push to GitLab on every change
 
 on:
-  - push
-  - delete
-push:
+  push:
+    branches: [ main ]
+  delete:
+    branches: [ main ]
+
+jobs:
+  push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
