@@ -6,7 +6,10 @@ on:
     branches: [ main ]
   delete:
     branches: [ main ]
-
+    
+env:
+    GIT_SSH_COMMAND: 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+    
 jobs:
   push:
     runs-on: ubuntu-latest
@@ -17,6 +20,10 @@ jobs:
         run: |
           git remote add gitlab git@gitlab.com:leonwong24/Spring-petclinic.git
           git push gitlab HEAD:main
+        env:
+          GIT_ASKPASS: /dev/null
+          GIT_USERNAME: "GitLab CI/CD"
+          GIT_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
 
 #jobs:
   #sync:
