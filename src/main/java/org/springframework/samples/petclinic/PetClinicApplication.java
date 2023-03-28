@@ -33,6 +33,4 @@ public class PetClinicApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
-	// putting test comment and push to git hub
-	// putting second comment and push to github
 }
