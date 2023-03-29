@@ -17,7 +17,11 @@ jobs:
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.0
         with:
-          ssh-private-key: ${{ secrets.GITLAB_DEPLOY_KEY }}
+          ssh-private-key: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACAlItBg7/WV9z1Yu0xwtItyakEd7ldzW+r97w8lU3ggZwAAAKD0dk+e9HZP
+ngAAAAtzc2gtZWQyNTUxOQAAACAlItBg7/WV9z1Yu0xwtItyakEd7ldzW+r97w8lU3ggZw
+AAAECWyxYdovAMUzHPFURVSi6ikyj46W1X1BlBM8l171ejtCUi0GDv9ZX3PVi7THC0i3Jq
+QR3uV3Nb6v3vDyVTeCBnAAAAGlNTSCBrZXkgZm9yIHVzZXIgb24gR2l0bGFiAQID
         
       - name: Push to GitLab
         run: |
